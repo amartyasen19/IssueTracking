@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
-require('dotenv').config(); // Load .env variables
+
+// Directly set the MongoDB URI here
+const MONGO_URI = 'mongodb+srv://19amartyasen:amartyasen@cluster0.78zcx.mongodb.net/issue-tracking?retryWrites=true&w=majority';
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, {
+    await mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
